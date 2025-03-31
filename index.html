@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar containing navigation options -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tasks"></i> <!-- Task list icon -->
+                </div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-item active">
+                    <i class="fas fa-list-check"></i>
+                    <span>To-Do-App</span>
+                </div>
+                
+                <!-- Categories section for organizing tasks -->
+                <div class="categories-section">
+                    <div class="categories-header">
+                        <span>Categories</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    
+                    <div class="category-list">
+                        <div class="category-item">
+                            <span class="category-dot none"></span>
+                            <span>None</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-dot home"></span>
+                            <span>Home</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-dot school"></span>
+                            <span>School</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-dot shopping"></span>
+                            <span>Shopping list</span>
+                        </div>
+                        <div class="add-category">
+                            <i class="fas fa-plus"></i>
+                            <span>Add new</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calendar menu item -->
+                <div class="menu-item calendar-item">
+                    <i class="far fa-calendar"></i>
+                    <span>Calendar</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content section -->
+        <div class="main-content">
+            <div class="header">
+                <h1>All your tasks</h1>
+                
+                <!-- Recycle bin for deleted tasks -->
+                <div class="recycle-bin">
+                    <i class="far fa-trash-can"></i>
+                    <span>Recycle Bin</span>
+                </div>
+            </div>
+            
+            <!-- Filter tabs for task status -->
+            <div class="filter-tabs">
+                <div class="tab active" data-filter="all">All</div>
+                <div class="tab" data-filter="completed">Completed</div>
+                <div class="tab" data-filter="active">Active</div>
+            </div>
+            
+            <!-- Task container where tasks will be displayed -->
+            <div class="tasks-container">
+                <div class="add-task-container">
+                    <button id="add-task-btn" type="button" title="Add a new task">
+                        <i class="fas fa-plus"></i>
+                        Add a task
+                    </button>
+                </div>
+                <div id="task-list">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Calendar modal for selecting dates and viewing tasks -->
+        <div class="calendar-modal" id="calendar-modal">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month" type="button" title="Previous Month">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h3 id="month-year">March 2025</h3>
+                    <button id="next-month" type="button" title="Next Month">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Days of the week header -->
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                
+                <!-- Calendar days will be dynamically generated -->
+                <div class="days" id="calendar-days">
+                    <!-- Calendar days will be added here -->
+                </div>
+                
+                <!-- Section to display tasks for a selected date -->
+                <div class="tasks-for-date">
+                    <h4 id="selected-date">Tasks for March 22, 2025</h4>
+                    <div id="tasks-on-date">
+                        <!-- Tasks for selected date will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript files for functionality -->
+    <script src="storage.js"></script>
+    <script src="calendar.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
